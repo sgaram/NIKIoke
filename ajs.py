@@ -10,31 +10,31 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 #ANTIJS_V2
-cl = LineClient(authToken='Ewl23RH1v7pYAkDwGRy8.wb+1x+ATrwACcZUumYsSUa.0pPpAiOchRilY9pV5a28LopZ90fgl/RQVNVA9OuD5qo=')
+cl = LineClient(authToken='Ex1Vpvf8kXF8Vsh2QBl8.wb+1x+ATrwACcZUumYsSUa.gXKufDfv/XL9vy2l0LE8fR5AyEwRLoGwpW7Zm1V29WI=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='EwVk0QafQs3VRxlaWdEf.SrrNO62JoBMwTM0dc/1lxW.vFCc1UwTti5vkTuJuyE6xCneYSSVXTAr/OA0hZo3FhY=')
+ki = LineClient(authToken='Ex3pmvuUrEpswooU2nT9.hBhkoFGOWq2ca/v2aGDfkq.1VJpoqB0Aywkghw4NJi/gm/KuxC7YgmNA9Ju7qQiCIs=')
 #ki = LineClient(authToken='ISI TOKENMU  DISINI')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='EwW0Yzzb4mERbmqlO6Oc.RjjX/PW5a9d/mkreQyncZa.qNEJHllLkgmodmpPC0OUfirvb9JtNHWOAbGf8Pkc4hw=')
+kk = LineClient(authToken='Exo0jDDSakok4HT28T0f.SrrNO62JoBMwTM0dc/1lxW.HneN2brqUNptsmPKd/42CMCsRY53rEoLacKfQPCU+Wg=')
 #kk = LineClient(authToken='ISI TOKENMU  DISINI')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='EwkFkqVdwBzgaEgL6l5f./JXwkfp+u4nfpiyYCt3rhW.kOgr2F5K8AhrVtYyi2p4Bzlk+/gmjBek7WbCCqFAKzI=')
+kc = LineClient(authToken='Ex0vvhV5kUwT3Fje5oRc.RjjX/PW5a9d/mkreQyncZa.Fz3TUutRnI5pgp/HhxMDfG7Fc6Jfm+4YXY3vkXhAX5E=')
 #kc = LineClient(authToken='ISI TOKENMU  DISINI')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-sw = LineClient(authToken='EwesC0puBcUAcPqrOte9.hBhkoFGOWq2ca/v2aGDfkq.Ch/M4eBXa0+5liQNCwFCBfeFc63VJuKJBzoIKmD/VTc=')
+sw = LineClient(authToken='ExmcTkHVcFHukXPkXPlf./JXwkfp+u4nfpiyYCt3rhW.KZsKzmldw3iEACRmBQ63SiIoL/WAKwAW7VVJplvmmNk=')
 #sw = LineClient(authToken='ISI TOKENMU  DISINI')
 sw.log("Auth Token : " + str(sw.authToken))
 channel11 = LineChannel(sw)
@@ -1055,7 +1055,7 @@ def bot(op):
                    for mention in mentionees:
                         if mention ['M'] in Bots:
                            cl.sendMessage(msg.to, wait["Respontag"])
-                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"7839705","STKPKGID":"1192862","STKVER":"1"}, contentType=7)
+                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"51626530","STKPKGID":"11538","STKVER":"1"}, contentType=7)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["Mentionkick"] == True:
@@ -1349,8 +1349,10 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                msg.contentType = 13
-                               msg.contentMetadata = {'mid': mid}
+                               msg.contentMetadata = {'mid': mid} 
+                               cl.sendMessage(msg.to, "􀌂􀄲􏿿")
                                cl.sendMessage1(msg)
+                               cl.sendMessage(msg.to, None, contentMetadata={"STKID":"51626530","STKPKGID":"11538","STKVER":"1"}, contentType=7)
 
                         elif text.lower() == "mid":
                                cl.sendMessage(msg.to, msg._from)
@@ -1478,7 +1480,7 @@ def bot(op):
                                     gTicket = "https://line.me/R/ti/g/{}".format(str(cl.reissueGroupTicket(G.id)))
                                 timeCreated = []
                                 timeCreated.append(time.strftime("%d-%m-%Y [ %H:%M:%S ]", time.localtime(int(G.createdTime) / 1000)))
-                                cl.sendMessage(msg.to, "❂-➣ĐPĶ Fams Grup Info\n\n❂-➣Nama Group : {}".format(G.name)+ "\n❂-➣ID Group : {}".format(G.id)+ "\n❂-➣Pembuat : {}".format(G.creator.displayName)+ "\n❂-➣Waktu Dibuat : {}".format(str(timeCreated))+ "\n❂-➣Jumlah Member : {}".format(str(len(G.members)))+ "\n❂-➣Jumlah Pending : {}".format(gPending)+ "\n❂-➣Group Qr : {}".format(gQr)+ "\n❂-➣Group Ticket : {}".format(gTicket))
+                                cl.sendMessage(msg.to, "❂-➣Sepri Fams Grup Info\n\n❂-➣Nama Group : {}".format(G.name)+ "\n❂-➣ID Group : {}".format(G.id)+ "\n❂-➣Pembuat : {}".format(G.creator.displayName)+ "\n❂-➣Waktu Dibuat : {}".format(str(timeCreated))+ "\n❂-➣Jumlah Member : {}".format(str(len(G.members)))+ "\n❂-➣Jumlah Pending : {}".format(gPending)+ "\n❂-➣Group Qr : {}".format(gQr)+ "\n❂-➣Group Ticket : {}".format(gTicket))
                                 cl.sendMessage(msg.to, None, contentMetadata={'mid': G.creator.mid}, contentType=13)
                                 cl.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
                             except Exception as e:
@@ -1758,8 +1760,8 @@ def bot(op):
                                     s += 7
                                     txt += u'@Alin \n'
                                 cl.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                                cl.sendMessage(to, "Hello {} Mention".format(str(len(nama)))) 
-
+                                cl.sendMessage(to, "Hello {} Mention".format(str(len(nama))))
+                                cl.sendMessage(msg.to, None, contentMetadata={"STKID":"51626512","STKPKGID":"11538","STKVER":"1"}, contentType=7)
 
                         elif cmd == "listbot":
                           if wait["selfbot"] == True:
@@ -1793,7 +1795,7 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"❂-➣ĐPĶ  admin\n\nSuper admin:\n"+ma+"\nAdmin:\n"+mb+"\nStaff:\n"+mc+"\nTotal「%s」 Dpk" %(str(len(owner)+len(admin)+len(staff))))
+                                cl.sendMessage(msg.to,"❂-➣Sepri  admin\n\nSuper admin:\n"+ma+"\nAdmin:\n"+mb+"\nStaff:\n"+mc+"\nTotal「%s」 Dpk" %(str(len(owner)+len(admin)+len(staff))))
 
                         elif cmd == "listprotect":
                           if wait["selfbot"] == True:
@@ -1826,7 +1828,7 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getGroup(group).name + "\n"
-                                cl.sendMessage(msg.to,"❂-➣ĐPĶ Fams Protection\n\n❂-➣PROTECT URL :\n"+ma+"\n❂-➣PROTECT KICK :\n"+mb+"\n❂-➣PROTECT JOIN :\n"+md+"\n❂-➣PROTECT CANCEL:\n"+mc+"\nTotal「%s」Grup yg dijaga" %(str(len(protectqr)+len(protectkick)+len(protectjoin)+len(protectcancel))))
+                                cl.sendMessage(msg.to,"❂-➣Sepri Fams Protection\n\n❂-➣PROTECT URL :\n"+ma+"\n❂-➣PROTECT KICK :\n"+mb+"\n❂-➣PROTECT JOIN :\n"+md+"\n❂-➣PROTECT CANCEL:\n"+mc+"\nTotal「%s」Grup yg dijaga" %(str(len(protectqr)+len(protectkick)+len(protectjoin)+len(protectcancel))))
 
                         elif cmd == "respon":
                           if wait["selfbot"] == True:
@@ -1972,7 +1974,7 @@ def bot(op):
                                 get_contact_time_start = time.time()
                                 get_contact = cl.getContact(mid)
                                 get_contact_time = time.time() - get_contact_time_start
-                                cl.sendMessage(msg.to, "❂-➣ĐPĶ Speed respon\n\n - Get Profile\n   %.10f\n - Get Contact\n   %.10f\n - Get Group\n   %.10f" % (get_profile_time/3,get_contact_time/3,get_group_time/3))
+                                cl.sendMessage(msg.to, "❂-➣Sepri Speed respon\n\n - Get Profile\n   %.10f\n - Get Contact\n   %.10f\n - Get Group\n   %.10f" % (get_profile_time/3,get_contact_time/3,get_group_time/3))
 
                         elif cmd == "speed" or cmd == "sp":
                           if wait["selfbot"] == True:
@@ -1981,6 +1983,7 @@ def bot(op):
                                cl.sendMessage(msg.to, "Progres speed...")
                                elapsed_time = time.time() - start
                                cl.sendMessage(msg.to, "{} detik".format(str(elapsed_time)))
+                               cl.sendMessage(msg.to, None, contentMetadata={"STKID":"51626512","STKPKGID":"11538","STKVER":"1"}, contentType=7)
 
                         elif cmd == "lurking on":
                           if wait["selfbot"] == True:

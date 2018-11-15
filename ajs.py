@@ -10,31 +10,31 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 #FUNKZHER BOT
-cl = LineClient(authToken='EzGmZa16ScxhbFWOslJc.Uv/0YYcEoAwu5rWj4Sx9Ja.4M7fBTNXI1zjok9lN7+OzB6Xh1rHrot9Vrp1eYXOIs0=')
+cl = LineClient(authToken='EzlePXVLpGFhQ0T94lWc./tnhgFNpEQYjiCeEi7iIha.aeD+/Dfd5m8r1+V4MuRacNwkaohlFjVEN6ITbJXxSkY=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='Ez8aYKy59bzDQdeu3hC0.9T/PGPFdadrWbCl3Gzx/Ga.iEHJ9E9mVqgfH59kupy/muIfSCGbocVGnbjrYq5rf9c=')
+ki = LineClient(authToken='EzPJP2Hms1aDOJcd9snf./JXwkfp+u4nfpiyYCt3rhW.wz+OR7uXaXTPeeYEN6lobW/dqt4E1W2vEl2/YjITnq8=')
 #ki = LineClient(authToken='ISI TOKENMU  DISINI')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='EzIUpBx7mtj2UvzEU3Zd.tLlReCirgG96uB+Q5pwO+q.H7N+PKQ8Il0aFz/b+5ub1a8QW98nDJKzhNNOviLyeoE=')
+kk = LineClient(authToken='Ezm8fLBeEZoOGa1Ovsw9.hBhkoFGOWq2ca/v2aGDfkq.LYpe+WmfTek4S/1itgDrqVs6uDe7tBCZBhF9poZYb1U=')
 #kk = LineClient(authToken='ISI TOKENMU  DISINI')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='EzYruRQi0cuei5ZxDAOb.zr+MvMh78HjcGGT1M17UEW.6b7uuSz7a9pWg7q0yH+tYDKVF0qEj31HCqUIuZ1vQik=')
+kc = LineClient(authToken='EzS6DRxmhWTa6w8YNBbc.RjjX/PW5a9d/mkreQyncZa.aKebVnjs4s3j4hSK3W9pHGzg6S6S0ZNRsPOph6or8e0=')
 #kc = LineClient(authToken='ISI TOKENMU  DISINI')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-sw = LineClient(authToken='EzRgB1HSHsRO5M79EoFf.XzmbAwonn5keEY4vw/uKlW.mqJ6Hvkh/pRdbrhq0usQMTrQkzM5+Y3h7v1ABZ6EPCw=')
+sw = LineClient(authToken='EzqHV8mldl5DjPsAK4Mf.SrrNO62JoBMwTM0dc/1lxW./XBpfvqMYMWVSvbWsm0XT0pSfI4EDe9C9/+2C3/XuZo=')
 #sw = LineClient(authToken='ISI TOKENMU  DISINI')
 sw.log("Auth Token : " + str(sw.authToken))
 channel11 = LineChannel(sw)
@@ -42,10 +42,10 @@ sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
 
 poll = LinePoll(cl)
 call = cl
-creator = ["u9f09cfcb17d037e2936b751bd9d40ead"]
-owner = ["u9f09cfcb17d037e2936b751bd9d40ead"]
-admin = ["u9f09cfcb17d037e2936b751bd9d40ead"]
-staff = ["u9f09cfcb17d037e2936b751bd9d40ead"]
+creator = ["uf9334719f9cf7aac8921c11e23b2221c"]
+owner = ["uf9334719f9cf7aac8921c11e23b2221c"]
+admin = ["uf9334719f9cf7aac8921c11e23b2221c"]
+staff = ["uf9334719f9cf7aac8921c11e23b2221c"]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid

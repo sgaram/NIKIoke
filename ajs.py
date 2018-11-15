@@ -10,31 +10,31 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 #FUNKZHER BOT
-cl = LineClient(authToken='EzUuA99F1xET3thLxsIf.UKqizqbC9WnclmUz/8ci3W.D2Tho2ncq308z/pmyuJmqQFZBS1F4QP2+abP4Hcf6Yc=')
+cl = LineClient(authToken='EzGmZa16ScxhbFWOslJc.Uv/0YYcEoAwu5rWj4Sx9Ja.4M7fBTNXI1zjok9lN7+OzB6Xh1rHrot9Vrp1eYXOIs0=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='Ezaz3eeP9SxURAuV2WR3.YBrRb/tHsIF+go7bOnNTyW.8r/abJ6CZ7HvZ05lZOPEBm4ZmXCVtFYNSBRu1Fvd9Ck=')
+ki = LineClient(authToken='Ez8aYKy59bzDQdeu3hC0.9T/PGPFdadrWbCl3Gzx/Ga.iEHJ9E9mVqgfH59kupy/muIfSCGbocVGnbjrYq5rf9c=')
 #ki = LineClient(authToken='ISI TOKENMU  DISINI')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='EzL3pK6QlUJUjnqNV3n1.dP/Zn+l/pqtqJli6Vx9Auq.4ekNr+z6zI6f0oeTB7KOMKwj1PNZI2o7ITgdXcfMkUQ=')
+kk = LineClient(authToken='EzIUpBx7mtj2UvzEU3Zd.tLlReCirgG96uB+Q5pwO+q.H7N+PKQ8Il0aFz/b+5ub1a8QW98nDJKzhNNOviLyeoE=')
 #kk = LineClient(authToken='ISI TOKENMU  DISINI')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='Ez0WNIuwLpUpsucS1X0a.kQdusqof6QQCjuis0nHNMG.XbWRjziheWT9lw4MrCLaqbta4xFXHG/5+Gm+4gl0Cs8=')
+kc = LineClient(authToken='EzYruRQi0cuei5ZxDAOb.zr+MvMh78HjcGGT1M17UEW.6b7uuSz7a9pWg7q0yH+tYDKVF0qEj31HCqUIuZ1vQik=')
 #kc = LineClient(authToken='ISI TOKENMU  DISINI')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-sw = LineClient(authToken='EzgTQanSSBOfPrjeo3g4.pWWxHn+3QkGKyCazGTx8ba.PhFXiZI9Yni4BbGfLc/cphh6sASNF2CtplA33m8OKmg=')
+sw = LineClient(authToken='EzRgB1HSHsRO5M79EoFf.XzmbAwonn5keEY4vw/uKlW.mqJ6Hvkh/pRdbrhq0usQMTrQkzM5+Y3h7v1ABZ6EPCw=')
 #sw = LineClient(authToken='ISI TOKENMU  DISINI')
 sw.log("Auth Token : " + str(sw.authToken))
 channel11 = LineChannel(sw)

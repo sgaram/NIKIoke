@@ -10,31 +10,31 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 #FUNKZHER BOT
-cl = LineClient(authToken='token')
+cl = LineClient(authToken='EzUuA99F1xET3thLxsIf.UKqizqbC9WnclmUz/8ci3W.D2Tho2ncq308z/pmyuJmqQFZBS1F4QP2+abP4Hcf6Yc=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='token')
+ki = LineClient(authToken='Ezaz3eeP9SxURAuV2WR3.YBrRb/tHsIF+go7bOnNTyW.8r/abJ6CZ7HvZ05lZOPEBm4ZmXCVtFYNSBRu1Fvd9Ck=')
 #ki = LineClient(authToken='ISI TOKENMU  DISINI')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='token')
+kk = LineClient(authToken='EzL3pK6QlUJUjnqNV3n1.dP/Zn+l/pqtqJli6Vx9Auq.4ekNr+z6zI6f0oeTB7KOMKwj1PNZI2o7ITgdXcfMkUQ=')
 #kk = LineClient(authToken='ISI TOKENMU  DISINI')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='token')
+kc = LineClient(authToken='Ez0WNIuwLpUpsucS1X0a.kQdusqof6QQCjuis0nHNMG.XbWRjziheWT9lw4MrCLaqbta4xFXHG/5+Gm+4gl0Cs8=')
 #kc = LineClient(authToken='ISI TOKENMU  DISINI')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-sw = LineClient(authToken='token')
+sw = LineClient(authToken='EzgTQanSSBOfPrjeo3g4.pWWxHn+3QkGKyCazGTx8ba.PhFXiZI9Yni4BbGfLc/cphh6sASNF2CtplA33m8OKmg=')
 #sw = LineClient(authToken='ISI TOKENMU  DISINI')
 sw.log("Auth Token : " + str(sw.authToken))
 channel11 = LineChannel(sw)
@@ -438,14 +438,14 @@ def bot(op):
         
         if op.type == 11:
             if op.param1 in protectqr:
-                wait["blacklist"][op.param2] = True
-                    if sw.getGroup(op.param1).preventedJoinByTicket == False:
+                try:
+                    if cl.getGroup(op.param1).preventedJoinByTicket == False:
                         if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                             cl.reissueGroupTicket(op.param1)
-                            X = sw.getGroup(op.param1)
+                            X = cl.getGroup(op.param1)
                             X.preventedJoinByTicket = True
-                            sw.updateGroup(X)
-                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                            cl.updateGroup(X)
+                            cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                 except:
                     try:
                         if ki.getGroup(op.param1).preventedJoinByTicket == False:

@@ -15,31 +15,31 @@ from thrift.TSerialization import *
 from thrift.TRecursive import *
 from thrift import transport, protocol, server
 #FUNKZHER BOT
-cl = LineClient(authToken='EzjD7zFvorVXaEGeH6h8.EQXpMUaZb3w28/I13CdWwa.+X6sPy+DwRQrKpkwo/tH3Nhfstns8iuQ/SxEJfYa770=')
+cl = LineClient(authToken='EzjD7zFvorVXaEGh8.EQXpMUaZb3w28/I13CdWwa.+X6sPy+DwRQrKpkwo/tH3Nhfstns8iuQ/SxEJfYa770=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient(authToken='EzRXHbH9gIVY7WZubPfa.rv4noG6x90Y7398dRwXCwG.XDtUlRogfa+Sh7KdXIwWGnLaOGHjrlj4U3+XNVgCbms=')
+ki = LineClient(authToken='EzRXHbH9gIVY7bPfa.rv4noG6x90Y7398dRwXCwG.XDtUlRogfa+Sh7KdXIwWGnLaOGHjrlj4U3+XNVgCbms=')
 #ki = LineClient(authToken='ISI TOKENMU  DISINI')
 ki.log("Auth Token : " + str(ki.authToken))
 channel1 = LineChannel(ki)
 ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient(authToken='EznHZsN97A460RsH0pea.oi9b32BlYKq0A48Va85DoG.732g1yc/7Pz33NdnoxSQ2YwSvN6IqTUADjYEoCvMuVc=')
+kk = LineClient(authToken='EznHZsN97A460Rea.oi9b32BlYKq0A48Va85DoG.732g1yc/7Pz33NdnoxSQ2YwSvN6IqTUADjYEoCvMuVc=')
 #kk = LineClient(authToken='ISI TOKENMU  DISINI')
 kk.log("Auth Token : " + str(kk.authToken))
 channel2 = LineChannel(kk)
 kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc = LineClient(authToken='Ez5keL3b127NwyGDia0b.35ZuqVxxgidlYih+K6d5gW.py2tWkOvJOx8upnShekMNcXGNrKXsOPloLOUMJdY6ic=')
+kc = LineClient(authToken='Ez5keL3b127Nwy0b.35ZuqVxxgidlYih+K6d5gW.py2tWkOvJOx8upnShekMNcXGNrKXsOPloLOUMJdY6ic=')
 #kc = LineClient(authToken='ISI TOKENMU  DISINI')
 kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-sw = LineClient(authToken='EzWWbAP9r7dG8XpZhsO8.bDAwub7CR9HFotCx6LwcEa.gsMWxTHVKX66Ctn199xDjH8dBIGLoOiApd1Ehn7Bieg=')
+sw = LineClient(authToken='EzWWbAP9r7dG8Xp8.bDAwub7CR9HFotCx6LwcEa.gsMWxTHVKX66Ctn199xDjH8dBIGLoOiApd1Ehn7Bieg=')
 #sw = LineClient(authToken='ISI TOKENMU  DISINI')
 sw.log("Auth Token : " + str(sw.authToken))
 channel11 = LineChannel(sw)

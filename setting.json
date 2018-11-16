@@ -13,14 +13,14 @@
     "RAautoread": false,
     "RAautoscan": false,
     "RAblacklist": {
-        "ucf97e89bfc77943c7d11c52c9c46b2b9": true
+        "ucf97e89bfc77943c7d11c52c9c46b2b9": false
     },
     "RAdblacklist": false,
     "RAfoto": {},
     "RAgreet": {},
     "RAlimit": 1,
     "RAmessage": "Hallo...",
-    "RAmessage1": "Minat? Chat http://line.me/ti/p/~withme_sw",
+    "RAmessage1": "",
     "RAprotcancel": {},
     "RAprotinvite": {},
     "RAprotkick": {},

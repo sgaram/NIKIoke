@@ -9,6 +9,11 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
+from thrift.unverting import *
+from thrift.TMultiplexedProcessor import *
+from thrift.TSerialization import *
+from thrift.TRecursive import *
+from thrift import transport, protocol, server
 #FUNKZHER BOT
 cl = LineClient(authToken='EzjD7zFvorVXaEGeH6h8.EQXpMUaZb3w28/I13CdWwa.+X6sPy+DwRQrKpkwo/tH3Nhfstns8iuQ/SxEJfYa770=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')

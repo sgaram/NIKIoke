@@ -9,11 +9,6 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
-from thrift.unverting import *
-from thrift.TMultiplexedProcessor import *
-from thrift.TSerialization import *
-from thrift.TRecursive import *
-from thrift import transport, protocol, server
 #FUNKZHER BOT
 cl = LineClient(authToken='EzUuA99F1xET3thLxsIf.UKqizqbC9WnclmUz/8ci3W.D2Tho2ncq308z/pmyuJmqQFZBS1F4QP2+abP4Hcf6Yc=')
 #cl = LineClient(authToken='ISI TOKENMU  DISINI')
@@ -46,10 +41,6 @@ channel11 = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
 
 poll = LinePoll(cl)
-poll = LinePoll(ki)
-poll = LinePoll(kk)
-poll = LinePoll(kc)
-poll = LinePoll(sw)
 call = cl
 creator = ["u9f09cfcb17d037e2936b751bd9d40ead"]
 owner = ["u9f09cfcb17d037e2936b751bd9d40ead"]
@@ -446,7 +437,7 @@ def bot(op):
             return
         
         if op.type == 11:
-            if mid in op.param1 in protectqr:
+            if op.param1 in protectqr:
                 try:
                     if cl.getGroup(op.param1).preventedJoinByTicket == False:
                         if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -454,178 +445,122 @@ def bot(op):
                             X = cl.getGroup(op.param1)
                             X.preventedJoinByTicket = True
                             cl.updateGroup(X)
-                            cl.kickoutFromGroup(op.param1,[op.param2])
+                            cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                 except:
-                    pass
-
-        if op.type == 11:
-            if Amid in op.param1 in protectqr:
-                try:
-                    if ki.getGroup(op.param1).preventedJoinByTicket == False:
-                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                            ki.reissueGroupTicket(op.param1)
-                            X = ki.getGroup(op.param1)
-                            X.preventedJoinByTicket = True
-                            ki.updateGroup(X)
-                            ki.kickoutFromGroup(op.param1,[op.param2])
-                except:
-                    pass
-
-        if op.type == 11:
-            if Bmid in op.param1 in protectqr:
-                try:
-                    if kk.getGroup(op.param1).preventedJoinByTicket == False:
-                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                            kk.reissueGroupTicket(op.param1)
-                            X = kk.getGroup(op.param1)
-                            X.preventedJoinByTicket = True
-                            kk.updateGroup(X)
-                            kk.kickoutFromGroup(op.param1,[op.param2])
-                except:
-                    pass
-
-        if op.type == 11:
-            if Cmid in op.param1 in protectqr:
-                try:
-                    if kc.getGroup(op.param1).preventedJoinByTicket == False:
-                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                            kc.reissueGroupTicket(op.param1)
-                            X = kc.getGroup(op.param1)
-                            X.preventedJoinByTicket = True
-                            kc.updateGroup(X)
-                            kc.kickoutFromGroup(op.param1,[op.param2])
-                except:
-                    pass
-
-        if op.type == 11:
-            if Zmid in op.param1 in protectqr:
-                try:
-                    if sw.getGroup(op.param1).preventedJoinByTicket == False:
-                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                            sw.reissueGroupTicket(op.param1)
-                            X = sw.getGroup(op.param1)
-                            X.preventedJoinByTicket = True
-                            sw.updateGroup(X)
-                            sw.kickoutFromGroup(op.param1,[op.param2])
-                except:
-                    pass
-
+                    try:
+                        if ki.getGroup(op.param1).preventedJoinByTicket == False:
+                            if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                ki.reissueGroupTicket(op.param1)
+                                X = ki.getGroup(op.param1)
+                                X.preventedJoinByTicket = True
+                                ki.updateGroup(X)
+                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+                            if kk.getGroup(op.param1).preventedJoinByTicket == False:
+                                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                    kk.reissueGroupTicket(op.param1)
+                                    X = kk.getGroup(op.param1)
+                                    X.preventedJoinByTicket = True
+                                    kk.updateGroup(X)
+                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                if kc.getGroup(op.param1).preventedJoinByTicket == False:
+                                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                        kc.reissueGroupTicket(op.param1)
+                                        X = kc.getGroup(op.param1)
+                                        X.preventedJoinByTicket = True
+                                        kc.updateGroup(X)
+                                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    if cl.getGroup(op.param1).preventedJoinByTicket == False:
+                                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                            cl.reissueGroupTicket(op.param1)
+                                            X = cl.getGroup(op.param1)
+                                            X.preventedJoinByTicket = True
+                                            cl.updateGroup(X)
+                                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    try:
+                                        if sw.getGroup(op.param1).preventedJoinByTicket == False:
+                                            if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                                sw.reissueGroupTicket(op.param1)
+                                                X = sw.getGroup(op.param1)
+                                                X.preventedJoinByTicket = True
+                                                sw.updateGroup(X)
+                                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                                    except:
+                                        pass
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         cl.acceptGroupInvitation(op.param1)
+                        ginfo = cl.getGroup(op.param1)
+                        cl.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
                         cl.leaveGroup(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
-            if Amid in op.param3:
-                if wait["autoLeave"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                        ki.acceptGroupInvitation(op.param1)
-                        ki.leaveGroup(op.param1)
-                    else:
-                        ki.acceptGroupInvitation(op.param1)
-            if Bmid in op.param3:
-                if wait["autoLeave"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                        kk.acceptGroupInvitation(op.param1)
-                        kk.leaveGroup(op.param1)
-                    else:
-                        kk.acceptGroupInvitation(op.param1)
-            if Cmid in op.param3:
-                if wait["autoLeave"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                        kc.acceptGroupInvitation(op.param1)
-                        kc.leaveGroup(op.param1)
-                    else:
-                        kc.acceptGroupInvitation(op.param1)
-            if Zmid in op.param3:
-                if wait["autoLeave"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                        sw.acceptGroupInvitation(op.param1)
-                        sw.leaveGroup(op.param1)
-                    else:
-                        sw.acceptGroupInvitation(op.param1)
+                        ginfo = cl.getGroup(op.param1)
+                        cl.sendMessage(op.param1,"Hai " + str(ginfo.name))
 
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         cl.acceptGroupInvitation(op.param1)
+                        ginfo = cl.getGroup(op.param1)
+                        cl.sendMessage(msg.to,"􀠁􀄽􏿿 " )
                     else:
                         cl.acceptGroupInvitation(op.param1)
+                        ginfo = cl.getGroup(op.param1)
+                        cl.sendMessage(msg.to,"􀠁􀄽􏿿 " )
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                        ki.acceptGroupInvitation(op.param1)
+                        ginfo = ki.getGroup(op.param1)
+                        ki.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
                         ki.leaveGroup(op.param1)
                     else:
-                        ki.acceptGroupInvitation(op.param1)     
+                        ki.acceptGroupInvitation(op.param1)
+                        ginfo = ki.getGroup(op.param1)
+                        ki.sendMessage(msg.to,"􀠁􀄽􏿿 " )
             if Bmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                        kk.acceptGroupInvitation(op.param1)
+                        ginfo = kk.getGroup(op.param1)
+                        ki.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
                         kk.leaveGroup(op.param1)
                     else:
-                        kk.acceptGroupInvitation(op.param1)    
+                        kk.acceptGroupInvitation(op.param1)
+                        ginfo = kk.getGroup(op.param1)
+                        kk.sendMessage(msg.to,"􀠁􀄽􏿿 " )
             if Cmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                        kc.acceptGroupInvitation(op.param1)
+                        ginfo = kc.getGroup(op.param1)
+                        kc.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
                         kc.leaveGroup(op.param1)
                     else:
                         kc.acceptGroupInvitation(op.param1)
+                        ginfo = kc.getGroup(op.param1)
+                        kc.sendMessage(msg.to,"􀠁􀄽􏿿 " )
             if Zmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                        sw.acceptGroupInvitation(op.param1)
+                        ginfo = sw.getGroup(op.param1)
+                        sw.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
                         sw.leaveGroup(op.param1)
                     else:
                         sw.acceptGroupInvitation(op.param1)
-
-        if op.type == 13:
-            if op.param1 in protectinvite:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    try:
-                        group = cl.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            cl.cancelGroupInvitation(op.param1,[op.param3])
-                            cl.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 13:
-            if op.param1 in protectinvite:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    try:
-                        group = ki.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            ki.cancelGroupInvitation(op.param1,[op.param3])
-                            ki.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 13:
-            if op.param1 in protectinvite:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    try:
-                        group = kk.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            kk.cancelGroupInvitation(op.param1,[op.param3])
-                            kk.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 13:
-            if op.param1 in protectinvite:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    try:
-                        group = kc.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            kc.cancelGroupInvitation(op.param1,[op.param3])
-                            kc.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
+                        ginfo = sw.getGroup(op.param1)
+                        sw.sendMessage(msg.to,"􀠁􀄽􏿿 " )
 
         if op.type == 13:
             if op.param1 in protectinvite:
@@ -635,77 +570,42 @@ def bot(op):
                         gMembMids = [contact.mid for contact in group.invitee]
                         for _mid in gMembMids:
                             sw.cancelGroupInvitation(op.param1,[op.param3])
-                            sw.kickoutFromGroup(op.param1,[op.param2])
+                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        pass
+                        try:
+                            group = ki.getGroup(op.param1)
+                            gMembMids = [contact.mid for contact in group.invitee]
+                            for _mid in gMembMids:
+                                ki.cancelGroupInvitation(op.param1,[op.param3])
+                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                group = kk.getGroup(op.param1)
+                                gMembMids = [contact.mid for contact in group.invitee]
+                                for _mid in gMembMids:
+                                    kk.cancelGroupInvitation(op.param1,[op.param3])
+                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                try:
+                                    group = kc.getGroup(op.param1)
+                                    gMembMids = [contact.mid for contact in group.invitee]
+                                    for _mid in gMembMids:
+                                        kc.cancelGroupInvitation(op.param1,[op.param3])
+                                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                                except:
+                                    pass
 
         if op.type == 13:
             if op.param2 in wait["blacklist"]:
-                cl.cancelGroupInvitation(op.param1,[op.param3])
-                cl.kickoutFromGroup(op.param1,[op.param2])
-            else:
-                pass
-
-        if op.type == 13:
-            if op.param2 in wait["blacklist"]:
-                ki.cancelGroupInvitation(op.param1,[op.param3])
-                ki.kickoutFromGroup(op.param1,[op.param2])
-            else:
-                pass
-
-        if op.type == 13:
-            if op.param2 in wait["blacklist"]:
-                kk.cancelGroupInvitation(op.param1,[op.param3])
-                kk.kickoutFromGroup(op.param1,[op.param2])
-            else:
-                pass
-
-        if op.type == 13:
-            if op.param2 in wait["blacklist"]:
-                kc.cancelGroupInvitation(op.param1,[op.param3])
-                kc.kickoutFromGroup(op.param1,[op.param2])
-            else:
-                pass
-
-        if op.type == 13:
-            if op.param2 in wait["blacklist"]:
-                sw.cancelGroupInvitation(op.param1,[op.param3])
-                sw.kickoutFromGroup(op.param1,[op.param2])
+                random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
             else:
                 pass
 
         if op.type == 17:
             if op.param2 in wait["blacklist"]:
-                cl.kickoutFromGroup(op.param1,[op.param2])
-                cl.cancelGroupInvitation(op.param1,[op.param3])
-            else:
-                pass
-
-        if op.type == 17:
-            if op.param2 in wait["blacklist"]:
-                ki.kickoutFromGroup(op.param1,[op.param2])
-                ki.cancelGroupInvitation(op.param1,[op.param3])
-            else:
-                pass
-
-        if op.type == 17:
-            if op.param2 in wait["blacklist"]:
-                kk.kickoutFromGroup(op.param1,[op.param2])
-                kk.cancelGroupInvitation(op.param1,[op.param3])
-            else:
-                pass
-
-        if op.type == 17:
-            if op.param2 in wait["blacklist"]:
-                kc.kickoutFromGroup(op.param1,[op.param2])
-                kc.cancelGroupInvitation(op.param1,[op.param3])
-            else:
-                pass
-
-        if op.type == 17:
-            if op.param2 in wait["blacklist"]:
-                sw.kickoutFromGroup(op.param1,[op.param2])
-                sw.cancelGroupInvitation(op.param1,[op.param3])
+                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                random.choice(KAC).cancelGroupInvitation(op.param1,[op.param3])
             else:
                 pass
 
@@ -725,50 +625,24 @@ def bot(op):
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
-                        	sw.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 17:
-            if op.param1 in protectjoin:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        if op.param3 not in wait["blacklist"]:
-                        	cl.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 17:
-            if op.param1 in protectjoin:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        if op.param3 not in wait["blacklist"]:
-                        	ki.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 17:
-            if op.param1 in protectjoin:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        if op.param3 not in wait["blacklist"]:
-                        	kk.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 17:
-            if op.param1 in protectjoin:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        if op.param3 not in wait["blacklist"]:
                         	kc.kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        pass
-
+                        try:
+                            if op.param3 not in wait["blacklist"]:
+                                ki.kickoutFromGroup(op.param1,[op.param2])
+                                random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                        except:
+                            try:
+                                if op.param3 not in wait["blacklist"]:
+                                    kk.kickoutFromGroup(op.param1,[op.param2])
+                                    random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                            except:
+                                try:
+                                    if op.param3 not in wait["blacklist"]:
+                                        sw.kickoutFromGroup(op.param1,[op.param2])
+                                        random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                                except:
+                                    pass
                 return
 
         if op.type == 0:
@@ -785,58 +659,79 @@ def bot(op):
             if op.param1 in protectkick:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
-                    cl.kickoutFromGroup(op.param1,[op.param2])
-                    cl.cancelGroupInvitation(op.param1,[op.param3])
+                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                 else:
-                    pass 
+                    pass
 
+    #    if op.type == 19:
+  #          try:
+    #            if op.param1 in ghost:
+       #             if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+       #                 G = cl.getGroup(op.param1)
+        #                G.preventedJoinByTicket = False
+       #                 cl.updateGroup(G)
+       #                 invsend = 0
+      #                  Ticket = cl.reissueGroupTicket(op.param1)
+        #                sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+      #                  sw.kickoutFromGroup(op.param1,[op.param2])
+        #                sw.kickoutFromGroup(op.param1,[op.param2])
+     #                   sw.kickoutFromGroup(op.param1,[op.param2])
+      #                  sw.kickoutFromGroup(op.param1,[op.param2])
+        #                sw.kickoutFromGroup(op.param1,[op.param2])
+          #              sw.leaveGroup(op.param1)
+       #                 X = cl.getGroup(op.param1)
+       #                 X.preventedJoinByTicket = True
+      #                  cl.updateGroup(X)
+                      #  cl.updateGroup(X)
+    #        except:
+   #             pass             
+                
         if op.type == 19:
-            if op.param1 in protectkick:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    ki.kickoutFromGroup(op.param1,[op.param2])
-                    ki.cancelGroupInvitation(op.param1,[op.param3])
-                else:
-                    pass 
-
-        if op.type == 19:
-            if op.param1 in protectkick:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    kk.kickoutFromGroup(op.param1,[op.param2])
-                    kk.cancelGroupInvitation(op.param1,[op.param3])
-                else:
-                    pass 
-
-        if op.type == 19:
-            if op.param1 in protectkick:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    kc.kickoutFromGroup(op.param1,[op.param2])
-                    kc.cancelGroupInvitation(op.param1,[op.param3])
-                else:
-                    pass 
-
-        if op.type == 19:
-            if op.param1 in protectkick:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    sw.kickoutFromGroup(op.param1,[op.param2])
-                    sw.cancelGroupInvitation(op.param1,[op.param3])
-                else:
-                    pass 
-
-        if op.type == 32:
-            if op.param1 in protectcancel:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        if op.param3 not in wait["blacklist"]:
-                            cl.kickoutFromGroup(op.param1,[op.param2])
-                            cl.cancelGroupInvitation(op.param1,[op.param3])
-                    except:
+            try:
+                if op.param1 in protectantijs:
+                  if op.param3 in mid:
+                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+        #                sw.acceptGroupInvitation(op.param1)
+                        G = sw.getGroup(op.param1)
+                        G.prevenARoinByTicket = False
+                        sw.updateGroup(G)
+                        Ticket = sw.reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        sw.kickoutFromGroup(op.param1,[op.param2])
+        #                G.prevenARoinByTicket = True
+                        sw.updateGroup(G)
+         #               wait["blacklist"][op.param2] = True
+         #               sw.leaveGroup(op.param1)
+          #              cl.inviteIntoGroup(op.param1,[Zmid])
+          #              cl.inviteIntoGroup(op.param1,[admin])
+                    else:
                         pass
-
+                        
+                if op.param3 in Zmid:
+                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        cl.findAndAddContactsByMid(op.param3)
+                        cl.inviteIntoGroup(op.param1,[Zmid])
+                        cl.sendMessage(op.param1,"=AntiJS Invited=")
+                    else:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        cl.findAndAddContactsByMid(op.param3)
+                        cl.inviteIntoGroup(op.param1,[Zmid])
+                        cl.sendMessage(op.param1,"=AntiJS Invited=")
+                        
+                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param3 in admin:
+                        if op.param1 in protectantijs:
+                            wait["blacklist"][op.param2] = True
+                            cl.kickoutFromGroup(op.param1,[op.param2])
+                            cl.findAndAddContactsByMid(op.param3)
+                            cl.inviteIntoGroup(op.param1,[op.param3])
+                            cl.sendMessage(op.param1,"=Admin Invited=")
+                else:
+                    pass
+            except:
+                pass
+#-------------------------------------------------------------------------------                
         if op.type == 32:
             if op.param1 in protectcancel:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -844,421 +739,311 @@ def bot(op):
                     try:
                         if op.param3 not in wait["blacklist"]:
                             ki.kickoutFromGroup(op.param1,[op.param2])
-                            ki.cancelGroupInvitation(op.param1,[op.param3])
+                            random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
                     except:
-                        pass
+                        try:
+                            if op.param3 not in wait["blacklist"]:
+                                kk.kickoutFromGroup(op.param1,[op.param2])
+                                random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                        except:
+                            try:
+                                if op.param3 not in wait["blacklist"]:
+                                    kc.kickoutFromGroup(op.param1,[op.param2])
+                                    random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                            except:
+                                try:
+                                    if op.param3 not in wait["blacklist"]:
+                                        sw.kickoutFromGroup(op.param1,[op.param2])
+                                        random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                                except:
+                                    try:
+                                        if op.param3 not in wait["blacklist"]:
+                                            kk.kickoutFromGroup(op.param1,[op.param2])
+                                            random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                                    except:
+                                        try:
+                                            if op.param3 not in wait["blacklist"]:
+                                                cl.kickoutFromGroup(op.param1,[op.param2])
+                                                random.choice(ABC).cancelGroupInvitation(op.param1,[op.param3])
+                                        except:
+                                            pass
+                return
 
-        if op.type == 32:
-            if op.param1 in protectcancel:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+        if op.type == 19:
+            if mid in op.param3:
+                if op.param2 in Bots:
+                    pass
+                if op.param2 in owner:
+                    pass
+                if op.param2 in admin:
+                    pass
+                if op.param2 in staff:
+                    pass
+                else:
                     wait["blacklist"][op.param2] = True
                     try:
-                        if op.param3 not in wait["blacklist"]:
+                        ki.kickoutFromGroup(op.param1,[op.param2])
+                        kk.inviteIntoGroup(op.param1,[op.param3])
+                        cl.acceptGroupInvitation(op.param1)
+                    except:
+                        try:
+                            G = kc.getGroup(op.param1)
+                            G.preventedJoinByTicket = False
                             kk.kickoutFromGroup(op.param1,[op.param2])
-                            kk.cancelGroupInvitation(op.param1,[op.param3])
-                    except:
-                        pass
+                            kc.updateGroup(G)
+                            Ticket = kk.reissueGroupTicket(op.param1)
+                            cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        except:
+                            try:
+                                G = sw.getGroup(op.param1)
+                                G.preventedJoinByTicket = False
+                                kc.kickoutFromGroup(op.param1,[op.param2])
+                                sw.updateGroup(G)
+                                Ticket = sw.reissueGroupTicket(op.param1)
+                                cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            except:
+                                try:
+                                    G = ki.getGroup(op.param1)
+                                    G.preventedJoinByTicket = False
+                                    sw.kickoutFromGroup(op.param1,[op.param2])
+                                    ki.updateGroup(G)
+                                    Ticket = ki.reissueGroupTicket(op.param1)
+                                    cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                except:
+                                    pass
 
-        if op.type == 32:
-            if op.param1 in protectcancel:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+            if Amid in op.param3:
+                if op.param2 in Bots:
+                    pass
+                if op.param2 in owner:
+                    pass
+                if op.param2 in admin:
+                    pass
+                if op.param2 in staff:
+                    pass
+                else:
                     wait["blacklist"][op.param2] = True
                     try:
-                        if op.param3 not in wait["blacklist"]:
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.inviteIntoGroup(op.param1,[op.param3])
+                        ki.acceptGroupInvitation(op.param1)
+                    except:
+                        try:
+                            G = sw.getGroup(op.param1)
+                            G.preventedJoinByTicket = False
                             kc.kickoutFromGroup(op.param1,[op.param2])
-                            kc.cancelGroupInvitation(op.param1,[op.param3])
-                    except:
-                        pass
+                            sw.updateGroup(G)
+                            Ticket = sw.reissueGroupTicket(op.param1)
+                            cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        except:
+                            try:
+                                G = cl.getGroup(op.param1)
+                                G.preventedJoinByTicket = False
+                                sw.kickoutFromGroup(op.param1,[op.param2])
+                                cl.updateGroup(G)
+                                Ticket = cl.reissueGroupTicket(op.param1)
+                                cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            except:
+                                try:
+                                    G = kk.getGroup(op.param1)
+                                    G.preventedJoinByTicket = False
+                                    cl.kickoutFromGroup(op.param1,[op.param2])
+                                    kk.updateGroup(G)
+                                    Ticket = kk.reissueGroupTicket(op.param1)
+                                    cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    G = kk.getGroup(op.param1)
+                                except:
+                                    pass
+                return
 
-        if op.type == 32:
-            if op.param1 in protectcancel:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+            if Bmid in op.param3:
+                if op.param2 in Bots:
+                    pass
+                if op.param2 in owner:
+                    pass
+                if op.param2 in admin:
+                    pass
+                if op.param2 in staff:
+                    pass
+                else:
                     wait["blacklist"][op.param2] = True
                     try:
-                        if op.param3 not in wait["blacklist"]:
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        sw.inviteIntoGroup(op.param1,[op.param3])
+                        kk.acceptGroupInvitation(op.param1)
+                    except:
+                        try:
+                            G = cl.getGroup(op.param1)
+                            G.preventedJoinByTicket = False
                             sw.kickoutFromGroup(op.param1,[op.param2])
-                            sw.cancelGroupInvitation(op.param1,[op.param3])
-                    except:
-                        pass
+                            cl.updateGroup(G)
+                            Ticket = cl.reissueGroupTicket(op.param1)
+                            cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        except:
+                            try:
+                                G = ki.getGroup(op.param1)
+                                G.preventedJoinByTicket = False
+                                cl.kickoutFromGroup(op.param1,[op.param2])
+                                ki.updateGroup(G)
+                                Ticket = ki.reissueGroupTicket(op.param1)
+                                cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            except:
+                                try:
+                                    G = kc.getGroup(op.param1)
+                                    G.preventedJoinByTicket = False
+                                    ki.kickoutFromGroup(op.param1,[op.param2])
+                                    kc.updateGroup(G)
+                                    Ticket = kc.reissueGroupTicket(op.param1)
+                                    cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                except:
+                                    pass
+                return
 
-        if op.type == 19:
-            if mid in op.param3:
-                if op.param2 in Amid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        ki.inviteIntoGroup(op.param1,[op.param3])
-                        cl.acceptGroupInvitation(op.param1)
-                        ki.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if mid in op.param3:
-                if op.param2 in Bmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kk.inviteIntoGroup(op.param1,[op.param3])
-                        cl.acceptGroupInvitation(op.param1)
-                        kk.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if mid in op.param3:
-                if op.param2 in Cmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kc.inviteIntoGroup(op.param1,[op.param3])
-                        cl.acceptGroupInvitation(op.param1)
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if mid in op.param3:
-                if op.param2 in Zmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        sw.inviteIntoGroup(op.param1,[op.param3])
-                        cl.acceptGroupInvitation(op.param1)
-                        sw.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Amid in op.param3:
-                if op.param2 in mid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        cl.inviteIntoGroup(op.param1,[op.param3])
-                        ki.acceptGroupInvitation(op.param1)
-                        cl.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Amid in op.param3:
-                if op.param2 in Bmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kk.inviteIntoGroup(op.param1,[op.param3])
-                        ki.acceptGroupInvitation(op.param1)
-                        kk.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Amid in op.param3:
-                if op.param2 in Cmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kc.inviteIntoGroup(op.param1,[op.param3])
-                        ki.acceptGroupInvitation(op.param1)
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Amid in op.param3:
-                if op.param2 in Zmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        sw.inviteIntoGroup(op.param1,[op.param3])
-                        ki.acceptGroupInvitation(op.param1)
-                        sw.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-        
-        if op.type == 19:
-            if Bmid in op.param3:
-                if op.param2 in mid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        cl.inviteIntoGroup(op.param1,[op.param3])
-                        kk.acceptGroupInvitation(op.param1)
-                        cl.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Bmid in op.param3:
-                if op.param2 in Amid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        ki.inviteIntoGroup(op.param1,[op.param3])
-                        kk.acceptGroupInvitation(op.param1)
-                        ki.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Bmid in op.param3:
-                if op.param2 in Cmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kc.inviteIntoGroup(op.param1,[op.param3])
-                        kk.acceptGroupInvitation(op.param1)
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Bmid in op.param3:
-                if op.param2 in Zmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        sw.inviteIntoGroup(op.param1,[op.param3])
-                        kk.acceptGroupInvitation(op.param1)
-                        sw.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
             if Cmid in op.param3:
-                if op.param2 in mid:
+                if op.param2 in Bots:
                     pass
                 if op.param2 in owner:
                     pass
                 if op.param2 in admin:
                     pass
-                if op.param2 in Bot:
+                if op.param2 in staff:
                     pass
                 else:
                     wait["blacklist"][op.param2] = True
                     try:
+                        sw.kickoutFromGroup(op.param1,[op.param2])
                         cl.inviteIntoGroup(op.param1,[op.param3])
                         kc.acceptGroupInvitation(op.param1)
-                        cl.kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        pass
+                        try:
+                            G = ki.getGroup(op.param1)
+                            G.preventedJoinByTicket = False
+                            cl.kickoutFromGroup(op.param1,[op.param2])
+                            ki.updateGroup(G)
+                            Ticket = ki.reissueGroupTicket(op.param1)
+                            cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        except:
+                            try:
+                                G = kk.getGroup(op.param1)
+                                G.preventedJoinByTicket = False
+                                ki.kickoutFromGroup(op.param1,[op.param2])
+                                kk.updateGroup(G)
+                                Ticket = kk.reissueGroupTicket(op.param1)
+                                cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            except:
+                                try:
+                                    G = sw.getGroup(op.param1)
+                                    G.preventedJoinByTicket = False
+                                    kk.kickoutFromGroup(op.param1,[op.param2])
+                                    sw.updateGroup(G)
+                                    Ticket = sw.reissueGroupTicket(op.param1)
+                                    cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                except:
+                                    pass
 
-        if op.type == 19:
-            if Cmid in op.param3:
-                if op.param2 in Amid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        ki.inviteIntoGroup(op.param1,[op.param3])
-                        kc.acceptGroupInvitation(op.param1)
-                        ki.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
+                return
 
-        if op.type == 19:
-            if Cmid in op.param3:
-                if op.param2 in Bmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kk.inviteIntoGroup(op.param1,[op.param3])
-                        kc.acceptGroupInvitation(op.param1)
-                        kk.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Cmid in op.param3:
-                if op.param2 in Zmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        sw.inviteIntoGroup(op.param1,[op.param3])
-                        kc.acceptGroupInvitation(op.param1)
-                        sw.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-        if op.type == 19:
             if Zmid in op.param3:
-                if op.param2 in mid:
+                if op.param2 in Bots:
                     pass
                 if op.param2 in owner:
                     pass
                 if op.param2 in admin:
                     pass
-                if op.param2 in Bot:
+                if op.param2 in staff:
                     pass
                 else:
                     wait["blacklist"][op.param2] = True
                     try:
-                        cl.inviteIntoGroup(op.param1,[op.param3])
-                        sw.acceptGroupInvitation(op.param1)
                         cl.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Zmid in op.param3:
-                if op.param2 in Amid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
                         ki.inviteIntoGroup(op.param1,[op.param3])
                         sw.acceptGroupInvitation(op.param1)
-                        ki.kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        pass
-
-        if op.type == 19:
-            if Zmid in op.param3:
-                if op.param2 in Bmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kk.inviteIntoGroup(op.param1,[op.param3])
-                        sw.acceptGroupInvitation(op.param1)
-                        kk.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
-
-        if op.type == 19:
-            if Zmid in op.param3:
-                if op.param2 in Cmid:
-                    pass
-                if op.param2 in owner:
-                    pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in Bot:
-                    pass
-                else:
-                    wait["blacklist"][op.param2] = True
-                    try:
-                        kc.inviteIntoGroup(op.param1,[op.param3])
-                        sw.acceptGroupInvitation(op.param1)
-                        kc.kickoutFromGroup(op.param1,[op.param2])
-                    except:
-                        pass
+                        try:
+                            G = kk.getGroup(op.param1)
+                            G.preventedJoinByTicket = False
+                            ki.kickoutFromGroup(op.param1,[op.param2])
+                            kk.updateGroup(G)
+                            Ticket = kk.reissueGroupTicket(op.param1)
+                            cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                        except:
+                            try:
+                                G = kc.getGroup(op.param1)
+                                G.preventedJoinByTicket = False
+                                kk.kickoutFromGroup(op.param1,[op.param2])
+                                kc.updateGroup(G)
+                                Ticket = kc.reissueGroupTicket(op.param1)
+                                cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                            except:
+                                try:
+                                    G = cl.getGroup(op.param1)
+                                    G.preventedJoinByTicket = False
+                                    kc.kickoutFromGroup(op.param1,[op.param2])
+                                    cl.updateGroup(G)
+                                    Ticket = cl.reissueGroupTicket(op.param1)
+                                    cl.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    ki.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kk.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    kc.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                    sw.acceptGroupInvitationByTicket(op.param1,Ticket)
+                                except:
+                                    pass
 
                 return
 
@@ -1278,7 +1063,17 @@ def bot(op):
                         ki.inviteIntoGroup(op.param1,admin)
                         ki.kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        pass
+                        try:
+                            kk.findAndAddContactsByMid(op.param1,admin)
+                            kk.inviteIntoGroup(op.param1,admin)
+                            kk.kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                kc.findAndAddContactsByMid(op.param1,admin)
+                                kc.inviteIntoGroup(op.param1,admin)
+                                kc.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                pass
 
                 return
 
@@ -1298,7 +1093,17 @@ def bot(op):
                         ki.inviteIntoGroup(op.param1,staff)
                         ki.kickoutFromGroup(op.param1,[op.param2])
                     except:
-                        pass
+                        try:
+                            kk.findAndAddContactsByMid(op.param1,staff)
+                            kk.inviteIntoGroup(op.param1,staff)
+                            kk.kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            try:
+                                kc.findAndAddContactsByMid(op.param1,staff)
+                                kc.inviteIntoGroup(op.param1,staff)
+                                kc.kickoutFromGroup(op.param1,[op.param2])
+                            except:
+                                pass
 
                 return
 
@@ -1687,16 +1492,33 @@ def bot(op):
                                   else:
                                        protectinvite.append(msg.to)
                                        ginfo = cl.getGroup(msg.to)
+                                       ginfo = ki.getGroup(msg.to)
+                                       ginfo = kk.getGroup(msg.to)
+                                       ginfo = kc.getGroup(msg.to)
+                                       ginfo = sw.getGroup(msg.to)
                                        msgs = "Protect invite diaktifkan\nDi Group : " +str(ginfo.name)
+                                  cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                  ki.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                  kk.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                  kc.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
+                                  sw.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in protectinvite:
                                          protectinvite.remove(msg.to)
                                          ginfo = cl.getGroup(msg.to)
+                                         ginfo = ki.getGroup(msg.to)
+                                         ginfo = kk.getGroup(msg.to)
+                                         ginfo = kc.getGroup(msg.to)
+                                         ginfo = sw.getGroup(msg.to)
                                          msgs = "Protect invite dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
                                          msgs = "Protect invite sudah tidak aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
-
+                                    ki.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
+                                    kk.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
+                                    kc.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
+                                    sw.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
+                        
                         elif cmd == "mybot":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
@@ -2194,13 +2016,18 @@ def bot(op):
                                 kk.acceptGroupInvitationByTicket(msg.to,Ticket)
                                 kc.acceptGroupInvitationByTicket(msg.to,Ticket)
                                 sw.acceptGroupInvitationByTicket(msg.to,Ticket)
-                                G = cl.getGroup(msg.to)
+                                G = sw.getGroup(msg.to)
                                 G.preventedJoinByTicket = True
-                                cl.updateGroup(G)
+                                sw.updateGroup(G)
+                               # ki.updateGroup(G)
+                              #  cl.updateGroup(G)
+                            #    kk.updateGroup(G)
 
                         elif cmd == "byeall":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                ki.sendText(msg.to, "Bye all, salam santun dari FunkZher Bot "+str(G.name))
                                 ki.leaveGroup(msg.to)
                                 kk.leaveGroup(msg.to)
                                 kc.leaveGroup(msg.to)
@@ -2209,6 +2036,8 @@ def bot(op):
                         elif cmd == "byeme":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
+                                G = cl.getGroup(msg.to)
+                                cl.sendText(msg.to, "FunkZher Bot LEAVE "+str(G.name))
                                 cl.leaveGroup(msg.to)
 
                         elif cmd.startswith("leave "):

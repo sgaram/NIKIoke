@@ -732,7 +732,7 @@ def bot(op):
                 cl.sendImageWithURL(op.param1, image)
 
         if op.type == 17:
-            ifop.param1 in protectjoin:
+            if op.param1 in protectjoin:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
@@ -742,7 +742,7 @@ def bot(op):
                         pass
 
         if op.type == 17:
-            ifop.param1 in protectjoin:
+            if op.param1 in protectjoin:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
@@ -752,7 +752,7 @@ def bot(op):
                         pass
 
         if op.type == 17:
-            ifop.param1 in protectjoin:
+            if op.param1 in protectjoin:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
@@ -762,7 +762,7 @@ def bot(op):
                         pass
 
         if op.type == 17:
-            ifop.param1 in protectjoin:
+            if op.param1 in protectjoin:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
@@ -772,7 +772,7 @@ def bot(op):
                         pass
 
         if op.type == 17:
-            ifop.param1 in protectjoin:
+            if op.param1 in protectjoin:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:

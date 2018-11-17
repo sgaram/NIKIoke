@@ -518,8 +518,6 @@ def bot(op):
                         cl.leaveGroup(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
-
-        if op.type == 13:
             if Amid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -527,8 +525,6 @@ def bot(op):
                         ki.leaveGroup(op.param1)
                     else:
                         ki.acceptGroupInvitation(op.param1)
-
-        if op.type == 13:
             if Bmid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -536,8 +532,6 @@ def bot(op):
                         kk.leaveGroup(op.param1)
                     else:
                         kk.acceptGroupInvitation(op.param1)
-
-        if op.type == 13:
             if Cmid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -545,9 +539,7 @@ def bot(op):
                         kc.leaveGroup(op.param1)
                     else:
                         kc.acceptGroupInvitation(op.param1)
-
-        if op.type == 13:
-            if Dmid in op.param3:
+            if Zmid in op.param3:
                 if wait["autoLeave"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         sw.acceptGroupInvitation(op.param1)
@@ -562,28 +554,24 @@ def bot(op):
                         cl.acceptGroupInvitation(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
-        if op.type == 13:                
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         ki.leaveGroup(op.param1)
                     else:
-                        ki.acceptGroupInvitation(op.param1)
-        if op.type == 13:                
+                        ki.acceptGroupInvitation(op.param1)     
             if Bmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         kk.leaveGroup(op.param1)
                     else:
-                        kk.acceptGroupInvitation(op.param1)
-        if op.type == 13:                
+                        kk.acceptGroupInvitation(op.param1)    
             if Cmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         kc.leaveGroup(op.param1)
                     else:
                         kc.acceptGroupInvitation(op.param1)
-        if op.type == 13:                
             if Zmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:

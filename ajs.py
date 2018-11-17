@@ -840,48 +840,58 @@ def bot(op):
 
         if op.type == 32:
             if op.param1 in protectcancel:
-              if op.param3 in Bots:    
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
                             cl.kickoutFromGroup(op.param1,[op.param2])
+                            cl.cancelGroupInvitation(op.param1,[op.param3])
+                    except:
+                        pass
 
         if op.type == 32:
             if op.param1 in protectcancel:
-              if op.param3 in Bots:    
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
                             ki.kickoutFromGroup(op.param1,[op.param2])
+                            ki.cancelGroupInvitation(op.param1,[op.param3])
+                    except:
+                        pass
 
         if op.type == 32:
             if op.param1 in protectcancel:
-              if op.param3 in Bots:    
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
                             kk.kickoutFromGroup(op.param1,[op.param2])
+                            kk.cancelGroupInvitation(op.param1,[op.param3])
+                    except:
+                        pass
 
         if op.type == 32:
             if op.param1 in protectcancel:
-              if op.param3 in Bots:    
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
                             kc.kickoutFromGroup(op.param1,[op.param2])
+                            kc.cancelGroupInvitation(op.param1,[op.param3])
+                    except:
+                        pass
 
         if op.type == 32:
             if op.param1 in protectcancel:
-              if op.param3 in Bots:    
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
                             sw.kickoutFromGroup(op.param1,[op.param2])
+                            sw.cancelGroupInvitation(op.param1,[op.param3])
+                    except:
+                        pass
 
         if op.type == 19:
             if mid in op.param3:
